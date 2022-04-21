@@ -1,7 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
 import Card from "./components/Card";
+import Buttons from "./components/Buttons";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Header />
       <div className="App">
         <Card />
+        <Buttons />
       </div>
     </div>
   );
