@@ -1,5 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  background-color: black;
+  height: 90vh;
 }
 
 .App-logo {
@@ -35,4 +42,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header-section{
+  background-color: #19b6fa;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.home{
+  margin-left: 5%;
+  
+}
+
+.card-div {
+  background-color: white;
+  width: 80%;
+  height: 60vh;
+  margin-left: 10%;
 }
