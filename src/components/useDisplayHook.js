@@ -1,24 +1,22 @@
 import { useState, useEffect } from "react";
 import data from "../data";
 
-function useDisplayHook(index) {
-  const [people, setPeople] = useState(data);
+function useDisplayHook(index, people) {
+  
   const [id, setId] = useState(null);
-  const [fname, setFName] = useState(null);
-  const [lname, setLName] = useState(null)
+  const [name, setName] = useState({});
   const [city, setCity] = useState(null);
   const [country, setCountry] = useState(null);
   const [employer, setEmployer] = useState(null);
   const [title, setTitle] = useState(null);
-  const [favoriteMovies, setFavoriteMovies] = useState(null);
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
   const [total, setTotal] = useState(null);
 
   useEffect(() => {
     const { id, name, city, country, employer, title, favoriteMovies } =
       people[index];
     setId(id);
-    setFName(name.first);
-    setLName(name.last);
+    setName(name)
     setCity(city);
     setCountry(country);
     setEmployer(employer);
@@ -28,7 +26,7 @@ function useDisplayHook(index) {
 
   }, [index, people]);
 
-  return [id, fname, lname, city, country, employer, title, favoriteMovies, total];
+  return [id, name, city, country, employer, title, favoriteMovies, total];
 }
 
 export default useDisplayHook;
