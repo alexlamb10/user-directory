@@ -95,7 +95,12 @@
   color: white;
   font-weight: 700;
   letter-spacing: 1px;
+  cursor: pointer;
 }
+.next, .prev{
+  cursor: pointer;
+}
+
 .person-info{
   display: flex;
   flex-direction: column;

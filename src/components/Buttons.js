@@ -4,7 +4,7 @@ function Buttons() {
   return (
     <div className="edit-div">
       <div>
-        <h3>&#10094; Previous</h3>
+        <h3 className="prev">&#10094; Previous</h3>
       </div>
       <div className="buttons-div">
         <button className="btn">Edit</button>
@@ -12,7 +12,7 @@ function Buttons() {
         <button className="btn">New</button>
       </div>
       <div>
-        <h3>Next &#10095;</h3>
+        <h3 className="next">Next &#10095;</h3>
       </div>
     </div>
   );
