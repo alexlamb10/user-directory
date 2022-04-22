@@ -125,7 +125,7 @@ input:focus{
 .btn:hover{
   background-color: #39c2fc;
   transform: scale(.95);
-  color: black;
+  color: rgba(0, 0, 0, 0.682);
 }
 
 .next, .prev{

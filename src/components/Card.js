@@ -6,6 +6,7 @@ function Card() {
   const [index, setIndex] = useState(0);
   const [people, setPeople] = useState(data);
   const [show, setShow] = useState(false);
+  const [edit, setEdit] = useState(false)
 
   const newUser = {
     id: people.length + 1,
@@ -47,6 +48,7 @@ function Card() {
     }
   }
   function handleChange(e) {
+    e.preventDefault()
     let key = e.target.name;
     newUser[key] = e.target.value;
     console.log(newUser);
@@ -68,6 +70,12 @@ function Card() {
     setPeople(newArr);
     setShow(false);
   }
+
+  function handleEdition(e) {
+    e.preventDefault()
+    people.splice(index, 1, newUser)
+  }
+  
 
   return (
     <div>
@@ -116,10 +124,69 @@ function Card() {
             placeholder="Favorite Movies"
             onChange={handleFavMovies}
           />
-          <button className="btn add" onClick={handleSubmit}>Submit User</button>
+          <button className="btn add" onClick={handleSubmit}>
+            Submit User
+          </button>
         </form>
       </div>
-      <div className={!show ? "card-div" : "hide"}>
+      <div className={edit ? "add-form" : "hide"}>
+        <h1 className="add-user">Edit Person</h1>
+        <form>
+          <input
+            type="text"
+            name="first"
+            placeholder="First Name"
+            onChange={handleNameChange}
+            value={name.first}
+          />
+          <input
+            type="text"
+            name="last"
+            placeholder="Last Name"
+            onChange={handleNameChange}
+            value={name.last}
+          />
+          <input
+            type="text"
+            name="city"
+            placeholder="city"
+            onChange={handleChange}
+            value={city}
+          />
+          <input
+            type="text"
+            name="country"
+            placeholder="country"
+            onChange={handleChange}
+            value={country}
+          />
+          <input
+            type="text"
+            name="employer"
+            placeholder="employer"
+            onChange={handleChange}
+            value={employer}
+          />
+          <input
+            type="text"
+            name="title"
+            placeholder="Job Title"
+            onChange={handleChange}
+            value={title}
+          />
+          <input
+            type="text"
+            name="favoriteMovies"
+            placeholder="Favorite Movies"
+            onChange={handleFavMovies}
+            value={favoriteMovies}
+          />
+          <button className="btn add" onClick={handleEdition}>
+            Submit Revision
+          </button>
+        </form>
+      </div>
+      <div className={!show && !edit ? "card-div" : "hide"}>
         <h1 className="index">
           {index + 1}/{people.length}
         </h1>
@@ -140,14 +207,16 @@ function Card() {
           <ol className="list">{movieList}</ol>
         </div>
       </div>
-      <div className={!show ? "edit-div" : "hide"}>
+      <div className={!show && !edit ? "edit-div" : "hide"}>
         <div>
           <h3 onClick={() => prevPerson()} className="prev">
             &#10094; Previous
           </h3>
         </div>
         <div className={"buttons-div"}>
-          <button className="btn">Edit</button>
+          <button className="btn" onClick={() => setEdit(true)}>
+            Edit
+          </button>
           <button onClick={() => deletePerson()} className="btn">
             Delete
           </button>
