@@ -9,7 +9,6 @@ function App() {
       <Header />
       <div className="App">
         <Card />
-        {/* <Buttons /> */}
       </div>
     </div>
   );
