@@ -89,10 +89,6 @@ input:focus{
   margin: 5%;
 }
 
-.add-user{
-  color: #19b6fa;
-}
-
 .edit-div{
   color: white;
   margin: 1vh 10% 7vh 10%;
@@ -143,7 +139,7 @@ input:focus{
   margin-left: 8%;
 }
 
-.name{
+.name, .add-user{
   border-bottom: 2px solid #19b6fa;
   margin-bottom: 3%;
 }
